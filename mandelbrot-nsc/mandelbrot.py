@@ -8,11 +8,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
+def mandelbrot_point(x_min:float, x_max:float, y_min:float, y_max:float, max_iter:int):
+    z = 0
+    xDomain, yDomain = np.linspace(x_min, x_max,1000), np.linspace(y_min, y_max,1000)
+    c = complex(x,y)
+    pass
 
-def mandelbrot():
+
+def compute_mandelbrot():
+    start = time.time()
     xDomain, yDomain = np.linspace(-2, 1,1000), np.linspace(-1.5, 1.5,1000)
-    bound = 2
-    max_iterations = 100   # any positive integer value
+    bound = 10
+    max_iterations = 1000   # any positive integer value
     colormap = 'magma'    # set to any matplotlib valid colormap
     # computing 2-d array to represent the mandelbrot-set
     iterationArray = []
@@ -30,7 +37,8 @@ def mandelbrot():
                 row.append(0)
 
         iterationArray.append(row)
-
+    elapsed = time.time() - start
+    print (f" Computation took {elapsed} seconds ")
     # plotting the data
     ax = plt.axes()
     ax.set_aspect('equal')
@@ -42,4 +50,4 @@ def mandelbrot():
     plt.gcf().set_size_inches(5,4)
     plt.show()
 
-mandelbrot()
+compute_mandelbrot()

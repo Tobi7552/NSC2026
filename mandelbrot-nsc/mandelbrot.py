@@ -8,9 +8,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-def mandelbrot_point(x_min:float, x_max:float, y_min:float, y_max:float, max_iter:int):
+def mandelbrot_point(x_min:float, x_max:float, y_min:float, y_max:float, max_iter:int, number:int):
     z = 0
     xDomain, yDomain = np.linspace(x_min, x_max,1000), np.linspace(y_min, y_max,1000)
+    
+
+
     c = complex(x,y)
     pass
 

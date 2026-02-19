@@ -12,7 +12,7 @@ def compute_mandelbrot_naive(plot = False):
     start = time.time()
     xDomain, yDomain = np.linspace(-2, 1,1024), np.linspace(-1.5, 1.5,1024)
     bound = 2
-    max_iterations = 1000  
+    max_iterations = 100
     colormap = 'magma'    # Set to any matplotlib valid colormap
     
     # computing 2-d array to represent the mandelbrot-set
@@ -32,7 +32,7 @@ def compute_mandelbrot_naive(plot = False):
 
         iterationArray.append(row)
     elapsed = time.time() - start
-    print (f"Time elapsed using the naive imementation is:{elapsed} seconds")
+    #print (f"Time elapsed using the naive imementation is:{elapsed} seconds")
     # plotting the data
     if plot:
         ax = plt.axes()
@@ -50,7 +50,7 @@ def compute_mandelbrot_naive(plot = False):
 def compute_mandelbrot_vectorized(plot = False):
     start = time.time()
     xDomain, yDomain = np.linspace(-2, 1,1024), np.linspace(-1.5, 1.5,1024)
-    max_iterations = 1000
+    max_iterations = 100
     bound = 2
     colormap = "magma"
 
@@ -69,7 +69,7 @@ def compute_mandelbrot_vectorized(plot = False):
                 break
 
     elapsed_vectorized = time.time() - start
-    print(f"Time elapsed using the vectorized imementation is:{elapsed_vectorized} seconds")
+    #print(f"Time elapsed using the vectorized imementation is:{elapsed_vectorized} seconds")
     if plot:
         ax = plt.axes()
         ax.set_aspect('equal')
@@ -97,6 +97,7 @@ def benchmark ( func , * args , n_runs =3) :
 
 #time_naive = compute_mandelbrot_naive()
 #time_vectorized = compute_mandelbrot_vectorized()
-t , M = benchmark(compute_mandelbrot_vectorized)
-t1 , M1 = benchmark(compute_mandelbrot_naive)
-print(f"Median time for Naive is {t1}, and for vectorized {t}")
+vector , M = benchmark(compute_mandelbrot_vectorized)
+naive , M1 = benchmark(compute_mandelbrot_naive)
+speedup = naive/ vector
+print(f"Median time for Naive is {naive}, and for vectorized {vector} with a speedup of {speedup}")

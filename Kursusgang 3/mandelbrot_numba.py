@@ -45,7 +45,6 @@ def compute_mandelbrot_vectorized(size, itterations, plot=False):
         plt.show()
     return elapsed_vectorized
 
-
 @njit(fastmath=True)
 def compute_mandelbrot_numba(size, itterations):
     xDomain = np.linspace(-2.0, 1.0, size)
@@ -107,7 +106,6 @@ def compute_mandelbrot_numba_slow(size, itterations):
 
     return m
 
-
 def compute_mandelbrot(size, itterations):
     xDomain, yDomain = np.linspace(-2, 1, size), np.linspace(-1.5, 1.5, size)
     bound = 10
@@ -142,7 +140,47 @@ def benchmark ( func , * args , n_runs =3) :
     print(f" Median : {median_t:.4f}s ", f"( min ={ min(times):.4f}, max ={max(times):.4f})")
     return median_t, result
 
+@njit(fastmath=True)
+def compute_mandelbrot_numba_typed(size, itterations, dtype=np.float64):
+    xDomain = np.linspace(-2.0, 1.0, size)
+    yDomain = np.linspace(-1.5, 1.5, size)
+    bound = 2
+    max_iterations = itterations
+    c = np.empty((size,size), dtype=np.complex128)
 
+    for y in range(size):
+        for x in range(size):
+            c[y, x] = complex(xDomain[x], yDomain[y])
+
+    z = np.zeros_like(c)
+    m = np.zeros((size, size), dtype=np.int32)
+    mask = np.ones((size, size),dtype=np.int32)
+        
+    for i in range(max_iterations):
+        """
+        We have to change this loop compared to the vectorized version
+        as numba doesnt like indexing such as z[mask], cause of boleans(Thanks to ChatGPT for the explanation)
+        This fixed my problem of "object mode" where it ran slower than the vectorized version
+        I have included the slow version as well, so the difference can be seen.
+        """
+        for y in range(size):
+            for x in range(size):
+                if mask[y,x]:
+                    z[y, x] = z[y, x]*z[y, x] + c[y, x]
+                    if z[y, x].real**2 + z[y, x].imag**2 > bound**2:
+                        m[y, x] = i
+                        mask[y, x] = 0
+        if np.all(mask == 0):
+            break
+    return m
+compute_mandelbrot_numba_typed(1024,100, np.float64)
+
+for dtype in [np.float16, np.float32, np.float64]:
+    t0 = time.perf_counter()
+    compute_mandelbrot_numba_typed(1024,100, dtype)
+    print(f"{dtype.__name__}: {time.perf_counter()-t0:.3f}s")
+
+"""
 compute_mandelbrot_numba(1024, 100)
 compute_mandelbrot_numba_slow(1024, 100)
 
@@ -154,3 +192,4 @@ print(f"Time elapsed Naive {naive}\n")
 print(f"Time elapsed vectorized {vector}")
 print(f"Time elapsed numba {numbaed}\n")
 print(f"Time elapsed numba slow {numbaed_slow}\n")
+"""

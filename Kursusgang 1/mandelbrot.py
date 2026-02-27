@@ -8,12 +8,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
-
+@profile
 def compute_mandelbrot():
     start = time.time()
-    xDomain, yDomain = np.linspace(-2, 1,1000), np.linspace(-1.5, 1.5,1000)
-    bound = 10
-    max_iterations = 1000   # any positive integer value
+    xDomain, yDomain = np.linspace(-2, 1,1024), np.linspace(-1.5, 1.5,1024)
+    bound = 2
+    max_iterations = 100   # any positive integer value
     colormap = 'magma'    # set to any matplotlib valid colormap
     # computing 2-d array to represent the mandelbrot-set
     iterationArray = []

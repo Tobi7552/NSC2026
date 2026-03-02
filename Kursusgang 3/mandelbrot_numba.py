@@ -106,6 +106,7 @@ def compute_mandelbrot_numba_slow(size, itterations):
 
     return m
 
+@profile
 def compute_mandelbrot(size, itterations):
     xDomain, yDomain = np.linspace(-2, 1, size), np.linspace(-1.5, 1.5, size)
     bound = 10

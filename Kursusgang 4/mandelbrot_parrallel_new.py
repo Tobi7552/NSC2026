@@ -19,14 +19,26 @@ max_itter = 100
 
 @njit
 def mandelbrot_pixel(c_real, c_imag, max_itter):
-    z_real = z_imag = 0.0
-    pass
+    z_real = np.zeros((size, size))
+    z_imag = np.zeros((size, size))
+
+    for i in range(max_itter):
+        zr2 = z_real*z_real
+        zi2 = z_imag*z_imag
+        if zr2 + zi2 > 4:
+            return i
+        else:
+            z_imag = 2 * z_real * z_imag + c_imag
+            z_real = zr2 - zi2 + c_real
+    return max_itter
 
 
 @njit
 def mandelbrot_chunk(row_start, row_end, N, x_min, x_max, y_min, y_max, max_itter):
     pass
 
+
+def mandebrot_serial(N, x_min, x_max, y_min, y_max, max_itter = 100):
 
 
 

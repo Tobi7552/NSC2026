@@ -6,7 +6,9 @@ Course: Numerical Scientific Computing 2026
 import numpy as np
 import matplotlib.pyplot as plt
 import time , statistics
+import cProfile, pstats
 from numba import njit, prange
+
 
 def compute_mandelbrot_vectorized(size, itterations, plot=False):
     start = time.time()
@@ -104,6 +106,7 @@ def compute_mandelbrot_numba_slow(size, itterations):
 
     return m
 
+@profile
 def compute_mandelbrot(size, itterations):
     xDomain, yDomain = np.linspace(-2, 1, size), np.linspace(-1.5, 1.5, size)
     bound = 10
@@ -139,14 +142,16 @@ def benchmark ( func , * args , n_runs =3) :
     return median_t, result
 
 
-compute_mandelbrot_numba(2048, 100)
-compute_mandelbrot_numba_slow(2048, 100)
+"""
+compute_mandelbrot_numba(1024, 100)
+compute_mandelbrot_numba_slow(1024, 100)
 
-naive , M = benchmark(compute_mandelbrot, 2048, 100)
-numbaed , M = benchmark(compute_mandelbrot_numba, 2048, 100)
-numbaed_slow , M = benchmark(compute_mandelbrot_numba_slow, 2048, 100)
-vector , M = benchmark(compute_mandelbrot_vectorized, 2048, 100)
+naive , M = benchmark(compute_mandelbrot, 1024, 100)
+numbaed , M = benchmark(compute_mandelbrot_numba, 1024, 100)
+numbaed_slow , M = benchmark(compute_mandelbrot_numba_slow, 1024, 100)
+vector , M = benchmark(compute_mandelbrot_vectorized, 1024, 100)
 print(f"Time elapsed Naive {naive}\n")
 print(f"Time elapsed vectorized {vector}")
 print(f"Time elapsed numba {numbaed}\n")
 print(f"Time elapsed numba slow {numbaed_slow}\n")
+"""

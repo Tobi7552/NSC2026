@@ -1,0 +1,81 @@
+2026-02-27 302e606 Added profiler
+
+ Kursusgang 1/mandelbrot.py       |   8 ++---
+ Kursusgang 1/mandelbrot.py.lprof | Bin 0 -> 468 bytes
+ Kursusgang 3/git_log.txt         |  70 ---------------------------------------
+ 3 files changed, 4 insertions(+), 74 deletions(-)
+2026-02-27 72c828f Added Git History
+
+ Kursusgang 3/git_log.txt         | 70 ++++++++++++++++++++++++++++++++++++++++
+ Kursusgang 3/mandelbrot_numba.py | 39 ----------------------
+ 2 files changed, 70 insertions(+), 39 deletions(-)
+2026-02-26 55135d2 Added numba types script
+
+ Kursusgang 3/Precision_comparisson.png | Bin 0 -> 94753 bytes
+ Kursusgang 3/mandelbrot_numba.py       |  43 ++++++++++++++++++++-
+ Kursusgang 3/mandelbrot_numba_typed.py |  67 +++++++++++++++++++++++++++++++++
+ 3 files changed, 108 insertions(+), 2 deletions(-)
+2026-02-26 7773961 Added line profiler
+
+ Kursusgang 3/Naive_profile.prof                      | Bin 0 -> 2558 bytes
+ Kursusgang 3/Numpy_profile.prof                      | Bin 0 -> 6424 bytes
+ .../__pycache__/mandelbrot_numba.cpython-311.pyc     | Bin 0 -> 8421 bytes
+ .../__pycache__/mandelbrot_numba.cpython-313.pyc     | Bin 0 -> 7855 bytes
+ Kursusgang 3/line_profiler.py                        |  19 +++++++++++++++++++
+ Kursusgang 3/mandelbrot_numba.py                     |  16 ++++++++++------
+ 6 files changed, 29 insertions(+), 6 deletions(-)
+2026-02-26 0bbc874 Implemented Numba
+
+ {mandelbrot-nsc => Kursusgang 1}/mandelbrot.py |   0
+ Kursusgang 3/mandelbrot_numba.py               | 152 +++++++++++++++++++++++++
+ 2 files changed, 152 insertions(+)
+2026-02-24 8f28da7 Merge pull request #1 from Tobi7552/dev
+2026-02-19 8186e8e Update mandelbrot_numpy.py
+
+ Kursusgang 2/mandelbrot_numpy.py | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+2026-02-19 63ada25 Update mandelbrot_numpy.py
+
+ Kursusgang 2/mandelbrot_numpy.py | 84 +++++++++++++++++++++++++++-------------
+ 1 file changed, 57 insertions(+), 27 deletions(-)
+2026-02-19 afb4f2b Update mandelbrot.py
+
+ mandelbrot-nsc/mandelbrot.py | 9 ---------
+ 1 file changed, 9 deletions(-)
+2026-02-19 1de6865 Create mandelbrot_numpy.py
+
+ Kursusgang 2/mandelbrot_numpy.py | 72 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 72 insertions(+)
+2026-02-11 b2fece2 Update mandelbrot.py
+
+ mandelbrot-nsc/mandelbrot.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+2026-02-05 00910c3 Update mandelbrot.py
+
+ mandelbrot-nsc/mandelbrot.py | 18 +++++++++++++-----
+ 1 file changed, 13 insertions(+), 5 deletions(-)
+2026-02-05 0f3e961 Update mandelbrot.py
+
+ mandelbrot-nsc/mandelbrot.py | 45 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
+2026-02-05 b1b3df9 Add mandelbrot skeleton
+
+ mandelbrot-nsc/mandelbrot.py | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+2026-02-05 d204b84 First commit
+
+ Kursusgang 1/environment.yml | 172 -------------------------------------------
+ 1 file changed, 172 deletions(-)
+2026-02-05 8d52b2f Add Python environment specification
+
+ mandelbrot-nsc/environment.yml | 172 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 172 insertions(+)
+2026-02-05 fd28971 First commit
+
+ Kursusgang 1/environment.yml | 172 +++++++++++++++++++++++++++++++++++++++++++
+ Kursusgang 1/test_install.py |  10 +++
+ 2 files changed, 182 insertions(+)
+2026-02-05 977c45d Initial commit
+
+ .gitattributes | 2 ++
+ 1 file changed, 2 insertions(+)

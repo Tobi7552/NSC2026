@@ -116,3 +116,20 @@ if __name__ == "__main__":
 
     for n, t, s, l in results:
         print(f"{n:8d} | {t:7.3f} | {T1/t:5.2f}x | {s:7.2f} | {l:7.2f}")
+
+    # Thanks to chat for the plotting
+    xs = [r[0] for r in results]
+    ys = [r[1] for r in results]
+
+    plt.figure(figsize=(8, 5))
+    plt.plot(xs, ys, marker="o")
+
+    plt.xlabel("n_chunks")
+    plt.ylabel("Time (s)")
+    plt.title("Dask Mandelbrot: chunk size vs performance")
+
+    plt.grid(True)
+
+    # save instead of show
+    plt.savefig("mandelbrot_dask_chunks.png", dpi=300, bbox_inches="tight")
+    plt.close()

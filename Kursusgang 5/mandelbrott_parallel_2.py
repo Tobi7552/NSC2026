@@ -83,6 +83,7 @@ def mandelbrot_parallel(N, x_min, x_max, y_min, y_max, max_itter, workers, n_chu
 
     return np.vstack(parts)
 
+
 def benchmark_parallel(N, x_min, x_max, y_min, y_max, max_itter, t_serial):
     max_workers = os.cpu_count()
     results = []

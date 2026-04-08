@@ -92,6 +92,7 @@ if __name__ == "__main__":
     t0 = time.perf_counter()
     mandebrot_serial(N, x_min, x_max, y_min, y_max, max_iter)
     T1 = time.perf_counter() - t0
+    print("Baseline time serial is:", T1)
 
     chunk_sweep = list(range(2, 64, 2))
     results = []

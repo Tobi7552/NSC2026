@@ -74,12 +74,16 @@ def compute_mandelbrot_dask(N, x_min, x_max, y_min, y_max, max_iter, n_chunks):
     results = dask.compute(*tasks)
     return np.vstack(results)
 
+#########
+# Test belows - above is code from earlier lectures
+########
+
+
 @pytest.mark.parametrize("c_real, c_imag, expected", [
     (0.0, 0.0, 100),     # stays bounded
     (2.0, 0.0, 1),       # escapes immediately
     (-1.0, 0.0, 100),    # inside set
 ])
-
 # test case 1
 def test_mandelbrot_pixel_known_values(c_real, c_imag, expected):
     result = mandelbrot_pixel(c_real, c_imag, 100)

@@ -1,0 +1,187 @@
+2026-04-26 b7e588f Implemented GPU mandelbrot
+
+ Kursusgang 10/basic_test.py         |  78 +++++++++++++++
+ Kursusgang 10/benchmark.png         | Bin 0 -> 44806 bytes
+ Kursusgang 10/mandelbrot_gpu.png    | Bin 0 -> 71087 bytes
+ Kursusgang 10/mandelbrot_gpu.py     | 115 +++++++++++++++++++++
+ Kursusgang 10/mandelbrot_gpu2.py    |  83 ++++++++++++++++
+ Kursusgang 10/mandelbrot_opencl.png | Bin 0 -> 109600 bytes
+ Kursusgang 10/mandelbrot_opencl.py  | 193 ++++++++++++++++++++++++++++++++++++
+ 7 files changed, 469 insertions(+)
+2026-04-23 32f76f7 Deleted git.log and implemented docstring
+
+ Kursusgang 9/docstring_mandelbrot.py | 109 +++++++++++++++++++++++++++
+ Kursusgang 9/test_mandelbrot.py      |   6 +-
+ git_log.txt                          | 140 -----------------------------------
+ 3 files changed, 114 insertions(+), 141 deletions(-)
+2026-04-23 aa87afc Implemented test for mandelbrot
+
+ Kursusgang 9/.coverage                             | Bin 0 -> 53248 bytes
+ .../test_mandelbrot.cpython-311-pytest-9.0.2.pyc   | Bin 0 -> 10505 bytes
+ ...test_mandelbrot.mandelbrot_chunk-34.py311.1.nbc | Bin 0 -> 37045 bytes
+ ...test_mandelbrot.mandelbrot_chunk-34.py311.2.nbc | Bin 0 -> 36803 bytes
+ .../test_mandelbrot.mandelbrot_chunk-34.py311.nbi  | Bin 0 -> 798 bytes
+ ...test_mandelbrot.mandelbrot_pixel-19.py311.1.nbc | Bin 0 -> 13487 bytes
+ .../test_mandelbrot.mandelbrot_pixel-19.py311.nbi  | Bin 0 -> 537 bytes
+ Kursusgang 9/docstring_mandelbrot.py               |   0
+ Kursusgang 9/test_mandelbrot.py                    | 129 +++++++++++++++++++++
+ 9 files changed, 129 insertions(+)
+2026-04-22 f328de7 Completed the exercises for lecture 8
+
+ Kursusgang 8/divergence_map_tau_0.0001.png       | Bin 0 -> 307933 bytes
+ Kursusgang 8/divergence_map_tau_0.001.png        | Bin 0 -> 161218 bytes
+ Kursusgang 8/divergence_map_tau_0.01.png         | Bin 0 -> 176367 bytes
+ Kursusgang 8/escape_map.png                      | Bin 0 -> 180588 bytes
+ Kursusgang 8/mandelbrot_sensitivity_map.py       |  80 +++++++++++++++++
+ Kursusgang 8/mandelbrot_trajectory_divergence.py | 107 +++++++++++++++++++++++
+ Kursusgang 8/sensitivity_map.png                 | Bin 0 -> 373919 bytes
+ 7 files changed, 187 insertions(+)
+2026-04-08 eac0c7a Small debugging
+
+ Kursusgang 6/mandelbrot_dask_chunks.png | Bin 123076 -> 122097 bytes
+ Kursusgang 6/mandelbrott_dask.py        |   1 +
+ 2 files changed, 1 insertion(+)
+2026-04-07 bd87c21 Added gitlog
+
+ gitlog.txt => git_log.txt | 59 +++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 59 insertions(+)
+2026-04-05 09be27e Create mandelbrott_dask_distributed.py
+
+ Kursusgang 7/mandelbrott_dask_distributed.py | 133 +++++++++++++++++++++++++++
+ 1 file changed, 133 insertions(+)
+2026-03-25 f90910f Saved plot
+
+ Kursusgang 6/mandelbrot_dask_chunks.png | Bin 0 -> 123076 bytes
+ Kursusgang 6/mandelbrott_dask.py        |  17 +++++++++++++++++
+ 2 files changed, 17 insertions(+)
+2026-03-25 93c856f Update mandelbrott_parallel_2.py
+
+ Kursusgang 5/mandelbrott_parallel_2.py | 1 +
+ 1 file changed, 1 insertion(+)
+2026-03-25 2edb4da Implemented Dask
+
+ ...andelbrott_dask.mandelbrot_chunk-34.py311.1.nbc | Bin 0 -> 36624 bytes
+ Kursusgang 6/mandelbrott_dask.py                   | 118 +++++++++++++++++++++
+ 2 files changed, 118 insertions(+)
+2026-03-20 14fc330 Merge branch 'main' of https://github.com/Tobi7552/NSC2026
+2026-03-19 db6659b Made exercises for lecture 5
+
+ ...rott_parallel_2.mandelbrot_chunk-32.py311.1.nbc | Bin 0 -> 35463 bytes
+ ...lbrott_parallel_2.mandelbrot_chunk-32.py311.nbi | Bin 0 -> 555 bytes
+ ...rott_parallel_2.mandelbrot_pixel-17.py311.1.nbc | Bin 0 -> 13895 bytes
+ ...lbrott_parallel_2.mandelbrot_pixel-17.py311.nbi | Bin 0 -> 666 bytes
+ Kursusgang 5/mandelbrott_parallel_2.py             | 183 +++++++++++++++++++++
+ 5 files changed, 183 insertions(+)
+2026-03-18 71d6f68 Finished Exercises for lecture 4
+
+ Kursusgang 4/mandelbrot.png              | Bin 0 -> 176331 bytes
+ Kursusgang 4/mandelbrot_parrallel.py     | 162 ++++++++++++++++++++-----------
+ Kursusgang 4/mandelbrot_parrallel_new.py |  87 -----------------
+ 3 files changed, 104 insertions(+), 145 deletions(-)
+2026-03-07 59a719e Update mandelbrot_parrallel_new.py
+
+ Kursusgang 4/mandelbrot_parrallel_new.py | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+2026-03-07 ab3dcdd Create mandelbrot_parrallel_new.py
+
+ Kursusgang 4/mandelbrot_parrallel_new.py | 75 ++++++++++++++++++++++++++++++++
+ 1 file changed, 75 insertions(+)
+2026-03-05 67837ba Copied code from slides
+
+ Kursusgang 4/mandelbrot_parrallel.py | 88 ++++++++++++++++++++++++++++++++++++
+ 1 file changed, 88 insertions(+)
+2026-03-02 dabc8f6 Update mandelbrot_numba.py
+
+ Kursusgang 3/mandelbrot_numba.py | 1 +
+ 1 file changed, 1 insertion(+)
+2026-02-27 b011a89 Fixed some errors in code
+
+ Kursusgang 1/mandelbrot.py       |  20 +++++-----
+ Kursusgang 1/mandelbrot.py.lprof | Bin 468 -> 390 bytes
+ gitlog.txt                       |  81 +++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 92 insertions(+), 9 deletions(-)
+2026-02-27 302e606 Added profiler
+
+ Kursusgang 1/mandelbrot.py       |   8 ++---
+ Kursusgang 1/mandelbrot.py.lprof | Bin 0 -> 468 bytes
+ Kursusgang 3/git_log.txt         |  70 ---------------------------------------
+ 3 files changed, 4 insertions(+), 74 deletions(-)
+2026-02-27 72c828f Added Git History
+
+ Kursusgang 3/git_log.txt         | 70 ++++++++++++++++++++++++++++++++++++++++
+ Kursusgang 3/mandelbrot_numba.py | 39 ----------------------
+ 2 files changed, 70 insertions(+), 39 deletions(-)
+2026-02-26 55135d2 Added numba types script
+
+ Kursusgang 3/Precision_comparisson.png | Bin 0 -> 94753 bytes
+ Kursusgang 3/mandelbrot_numba.py       |  43 ++++++++++++++++++++-
+ Kursusgang 3/mandelbrot_numba_typed.py |  67 +++++++++++++++++++++++++++++++++
+ 3 files changed, 108 insertions(+), 2 deletions(-)
+2026-02-26 7773961 Added line profiler
+
+ Kursusgang 3/Naive_profile.prof                      | Bin 0 -> 2558 bytes
+ Kursusgang 3/Numpy_profile.prof                      | Bin 0 -> 6424 bytes
+ .../__pycache__/mandelbrot_numba.cpython-311.pyc     | Bin 0 -> 8421 bytes
+ .../__pycache__/mandelbrot_numba.cpython-313.pyc     | Bin 0 -> 7855 bytes
+ Kursusgang 3/line_profiler.py                        |  19 +++++++++++++++++++
+ Kursusgang 3/mandelbrot_numba.py                     |  16 ++++++++++------
+ 6 files changed, 29 insertions(+), 6 deletions(-)
+2026-02-26 a1bb597 Create miniconda.exe
+
+ miniconda.exe | Bin 0 -> 1947329 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+2026-02-26 0bbc874 Implemented Numba
+
+ {mandelbrot-nsc => Kursusgang 1}/mandelbrot.py |   0
+ Kursusgang 3/mandelbrot_numba.py               | 152 +++++++++++++++++++++++++
+ 2 files changed, 152 insertions(+)
+2026-02-24 8f28da7 Merge pull request #1 from Tobi7552/dev
+2026-02-19 8186e8e Update mandelbrot_numpy.py
+
+ Kursusgang 2/mandelbrot_numpy.py | 15 ++++++++-------
+ 1 file changed, 8 insertions(+), 7 deletions(-)
+2026-02-19 63ada25 Update mandelbrot_numpy.py
+
+ Kursusgang 2/mandelbrot_numpy.py | 84 +++++++++++++++++++++++++++-------------
+ 1 file changed, 57 insertions(+), 27 deletions(-)
+2026-02-19 afb4f2b Update mandelbrot.py
+
+ mandelbrot-nsc/mandelbrot.py | 9 ---------
+ 1 file changed, 9 deletions(-)
+2026-02-19 1de6865 Create mandelbrot_numpy.py
+
+ Kursusgang 2/mandelbrot_numpy.py | 72 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 72 insertions(+)
+2026-02-11 b2fece2 Update mandelbrot.py
+
+ mandelbrot-nsc/mandelbrot.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+2026-02-05 00910c3 Update mandelbrot.py
+
+ mandelbrot-nsc/mandelbrot.py | 18 +++++++++++++-----
+ 1 file changed, 13 insertions(+), 5 deletions(-)
+2026-02-05 0f3e961 Update mandelbrot.py
+
+ mandelbrot-nsc/mandelbrot.py | 45 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)
+2026-02-05 b1b3df9 Add mandelbrot skeleton
+
+ mandelbrot-nsc/mandelbrot.py | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+2026-02-05 d204b84 First commit
+
+ Kursusgang 1/environment.yml | 172 -------------------------------------------
+ 1 file changed, 172 deletions(-)
+2026-02-05 8d52b2f Add Python environment specification
+
+ mandelbrot-nsc/environment.yml | 172 +++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 172 insertions(+)
+2026-02-05 fd28971 First commit
+
+ Kursusgang 1/environment.yml | 172 +++++++++++++++++++++++++++++++++++++++++++
+ Kursusgang 1/test_install.py |  10 +++
+ 2 files changed, 182 insertions(+)
+2026-02-05 977c45d Initial commit
+
+ .gitattributes | 2 ++
+ 1 file changed, 2 insertions(+)
